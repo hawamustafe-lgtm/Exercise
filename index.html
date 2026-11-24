@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWERFIT GYM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* GENERAL STYLE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #101010;
+            color: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #151515;
+            padding: 20px 8%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #D4AF37;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+
+        .btn {
+            background: #D4AF37;
+            color: #111;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background:
+            linear-gradient(90deg, #101010 15%, rgba(16,16,16,.7)),
+            url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600")
+            center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #D4AF37;
+        }
+
+        .hero p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .small-title {
+            color: #D4AF37;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        /* GENERAL SECTION */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            color: #D4AF37;
+        }
+
+        .section-title p {
+            color: #aaa;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .about-content h2 {
+            font-size: 35px;
+            margin: 15px 0;
+        }
+
+        .about-content p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #1c1c1c;
+            padding: 35px 25px;
+            border-radius: 10px;
+            border-bottom: 3px solid #D4AF37;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* TRAINERS */
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .trainer-card {
+            background: #1c1c1c;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .trainer-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .trainer-card h3 {
+            margin-top: 20px;
+        }
+
+        .trainer-card p {
+            color: #D4AF37;
+            margin-top: 5px;
+        }
+
+        /* MEMBERSHIP */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .price-card {
+            background: #1c1c1c;
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .price-card.featured {
+            border: 2px solid #D4AF37;
+        }
+
+        .price-card h3 {
+            font-size: 23px;
+        }
+
+        .price {
+            font-size: 38px;
+            color: #D4AF37;
+            margin: 20px 0;
+        }
+
+        .price-card p {
+            color: #bbb;
+            margin: 15px 0;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #1c1c1c;
+        }
+
+        .contact p {
+            color: #bbb;
+            margin: 15px 0 30px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 25px;
+            color: #aaa;
+        }
+
+        footer span {
+            color: #D4AF37;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 12px;
+            }
+
+            .services-grid,
+            .trainers-grid,
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .trainers-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">POWER<span>FIT</span></h2>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#membership" class="btn">Join Now</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <span class="small-title">WELCOME TO POWERFIT</span>
+
+            <h1>BUILD YOUR <span>BODY</span><br>
+            BUILD YOUR FUTURE</h1>
+
+            <p>
+                Transform your body and improve your lifestyle.
+                Start your fitness journey with our professional
+                trainers and modern gym equipment.
+            </p>
+
+            <a href="#membership" class="btn">GET STARTED</a>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900" alt="Modern gym">
+
+        <div class="about-content">
+            <span class="small-title">ABOUT OUR GYM</span>
+
+            <h2>WE HELP YOU BUILD A STRONGER BODY</h2>
+
+            <p>
+                POWERFIT GYM is a modern fitness center designed
+                to help people achieve their fitness goals.
+                We provide professional trainers, modern equipment
+                and a friendly training environment.
+            </p>
+
+            <a href="#services" class="btn">Explore More</a>
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+
+        <div class="section-title">
+            <span class="small-title">WHAT WE OFFER</span>
+            <h2>OUR <span>SERVICES</span></h2>
+            <p>Choose the right training for your goals.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <h3>Strength Training</h3>
+                <p>Build muscle and improve your physical strength.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Cardio Training</h3>
+                <p>Improve your endurance and cardiovascular fitness.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Weight Loss</h3>
+                <p>Work towards your fitness and body transformation goals.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Yoga Classes</h3>
+                <p>Improve flexibility, balance and relaxation.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Personal Training</h3>
+                <p>Get individual guidance from professional trainers.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Fitness Classes</h3>
+                <p>Train with others and stay motivated every day.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRAINERS -->
+    <section id="trainers">
+
+        <div class="section-title">
+            <span class="small-title">OUR PROFESSIONAL TEAM</span>
+            <h2>MEET OUR <span>TRAINERS</span></h2>
+        </div>
+
+        <div class="trainers-grid">
+
+            <div class="trainer-card">
+                <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=700" alt="Fitness trainer">
+                <h3>James Wilson</h3>
+                <p>Strength Trainer</p>
+            </div>
+
+            <div class="trainer-card">
+                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=700" alt="Fitness trainer">
+                <h3>Sarah Johnson</h3>
+                <p>Fitness Coach</p>
+            </div>
+
+            <div class="trainer-card">
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=700" alt="Fitness trainer">
+                <h3>Michael Brown</h3>
+                <p>Personal Trainer</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+    <section id="membership">
+
+        <div class="section-title">
+            <span class="small-title">OUR PRICING</span>
+            <h2>MEMBERSHIP <span>PLANS</span></h2>
+            <p>Choose your perfect fitness membership.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <h3>Basic Plan</h3>
+                <div class="price">$20</div>
+                <p>Monthly Gym Access</p>
+                <p>Basic Equipment</p>
+                <p>Locker Access</p>
+                <a href="#contact" class="btn">Join Now</a>
+            </div>
+
+            <div class="price-card featured">
+                <h3>Standard Plan</h3>
+                <div class="price">$35</div>
+                <p>Full Gym Access</p>
+                <p>Fitness Classes</p>
+                <p>Personal Guidance</p>
+                <a href="#contact" class="btn">Join Now</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Premium Plan</h3>
+                <div class="price">$50</div>
+                <p>Unlimited Gym Access</p>
+                <p>Personal Trainer</p>
+                <p>All Fitness Classes</p>
+                <a href="#contact" class="btn">Join Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <span class="small-title">START TODAY</span>
+        <h2>READY TO TRANSFORM YOUR BODY?</h2>
+
+        <p>Join POWERFIT GYM and start your fitness journey today.</p>
+
+        <a href="mailto:info@powerfitgym.com" class="btn">CONTACT US</a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 <span>POWERFIT GYM</span>. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
